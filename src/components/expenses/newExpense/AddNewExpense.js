@@ -20,8 +20,6 @@ console.log('_CLICKED');
 
 }
 
-
-
     return (
         <button onClick={openUpMenuHandler}>Add new Item</button>
       );
