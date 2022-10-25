@@ -12,21 +12,23 @@ function NewExpense(props) {
       ...enteredExpenseData,
       id: Math.random().toString()
     };
-    console.log(expenseData);
+    setIsEditing(false)
     props.onAddExpense(expenseData)
   };
 
   const startEditingHandler =() => {
+    setIsEditing(true)  
+  }
 
-    setIsEditing(true)
-
-    
+  const stopEditingHandler = () => {
+    setIsEditing(false)
   }
 
   return (
     <div className="new-expense">
-      <button onClick={startEditingHandler}></button>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {!isEditing && <button onClick={startEditingHandler}>Add new Item</button>}
+     
+      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>}
     </div>
   );
 }
