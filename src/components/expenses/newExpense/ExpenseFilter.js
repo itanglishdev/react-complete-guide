@@ -1,34 +1,29 @@
-import React from "react";
-import './ExpensesFilter.css'
+import React from "react"
+import "./ExpensesFilter.css"
 
 function ExpensesFilter(props) {
+	// const [yearSelected, setYearSelected] = useState('')
 
-    
-    // const [yearSelected, setYearSelected] = useState('')
+	const changeTheYearHandler = (e) => {
+		props.onChangeFilter(e.target.value)
+	}
 
-    const changeTheYearHandler = (e)=> {
-        props.onChangeFilter(e.target.value)
-        
-        
-
-    }
-
-
-    
-    return (
-        <div className="expenses-filter">
-            <div className="expenses-filter__control">
-                <label >Filter by Year</label>
-                <select value={props.selected} onChange={changeTheYearHandler}  >
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                </select>
-            </div>
-        </div>
-      );
+	return (
+		<div className="expenses-filter">
+			<div className="expenses-filter__control">
+				<label>Filter by Year</label>
+				<select
+					value={props.selected}
+					onChange={changeTheYearHandler}
+				>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+				</select>
+			</div>
+		</div>
+	)
 }
 
-
-export default ExpensesFilter;
+export default ExpensesFilter
