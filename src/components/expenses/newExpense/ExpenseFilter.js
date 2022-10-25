@@ -8,8 +8,8 @@ function ExpensesFilter(props) {
 
     const changeTheYearHandler = (e)=> {
         props.onChangeFilter(e.target.value)
-        // setYearSelected(e.target.value)
-        // console.log(e.target.value);
+        
+        
 
     }
 
